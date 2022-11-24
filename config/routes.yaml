@@ -2,10 +2,10 @@ controllers:
     resource: ../src/Controller/
     type: attribute
 
-hello_world:
-    path: /hello
-    controller: App\Controller\HelloWorld::hello
+# hello_world:
+#     path: /hello
+#     controller: App\Controller\HelloWorld::hello
 
-home:
-    path: /
-    controller: App\Controller\Home::home
+# home:
+#     path: /
+#     controller: App\Controller\Home::home

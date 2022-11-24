@@ -4,9 +4,12 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
 
 class Home
 {
+    #[Route('/')]
     public function home(): Response
     {
         $request = Request::createFromGlobals();
