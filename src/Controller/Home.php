@@ -5,9 +5,10 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
-class Home
+class Home extends AbstractController
 {
     #[Route('/')]
     public function home(): Response
@@ -15,14 +16,8 @@ class Home
         $request = Request::createFromGlobals();
         $name = $request->get('name');
 
-        return new Response(
-            '<html>
-            <body>
-            Welcome Home '.$name.' !
-            <br>
-            <a href="/hello">Go to hello</a>
-            </body>
-            </html>'
-        );
+        return $this->render('base.html.twig', [
+            'name' => $name,
+        ]);
     }
 }
