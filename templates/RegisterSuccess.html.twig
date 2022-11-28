@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Bravo !</title>
+
+	</head>
+
+	<body>
+    Bravo, vous avez créé votre compte ! 
+    <br>
+    Nom : {{ app.request.get('user')['name'] }}
+    <br>
+    Email : {{ app.request.get('user')['email'] }}
+    </body>
+
+
+</html>
