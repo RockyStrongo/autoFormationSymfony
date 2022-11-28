@@ -20,8 +20,6 @@ class RegisterController extends AbstractController
     {
         // creates a task object and initializes some data for this example
         $user = new UserRegistering();
-        // $user->setUserRegisteringName("Simon Ferlat");
-        // $user->setUserRegisteringEmail("ferlat.simon@gmail.com");
 
         $form = $this->createFormBuilder($user)
             ->add('name', TextType::class)
@@ -38,11 +36,7 @@ class RegisterController extends AbstractController
             // ... perform some action, such as saving the task to the database
             return $this->redirectToRoute('register-success', ['user' => $user]);
 
-            // $userName =  $user->getUserRegisteringName();
-            // echo "Username : ".$userName;
-
         }
-
 
         return $this->renderForm('RegisterForm.html.twig', [
             'form' => $form,

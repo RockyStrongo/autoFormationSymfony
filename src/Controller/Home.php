@@ -18,7 +18,7 @@ class Home extends AbstractController
         $request = Request::createFromGlobals();
         $name = $request->get('name');
 
-        return $this->render('base.html.twig', [
+        return $this->render('Home.html.twig', [
             'name' => $name,
         ]);
     }
