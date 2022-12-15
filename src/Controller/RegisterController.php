@@ -22,8 +22,9 @@ class RegisterController extends AbstractController
         $user = new UserRegistering();
 
         $form = $this->createFormBuilder($user)
-            ->add('name', TextType::class)
-            ->add('email', TextType::class)
+            ->setAction($this->generateUrl('register-success'))
+                ->add('name', TextType::class, ['label' => 'Nom'])
+            ->add('email', TextType::class, ['label' => 'Mail'])
             ->add('save', SubmitType::class, ['label' => 'Creer mon compte'])
             ->getForm();
 
@@ -34,8 +35,7 @@ class RegisterController extends AbstractController
             $user = $form->getData();
 
             // ... perform some action, such as saving the task to the database
-            return $this->redirectToRoute('register-success', ['user' => $user]);
-
+            // return $this->redirectToRoute('register-success');
         }
 
         return $this->renderForm('RegisterForm.html.twig', [
