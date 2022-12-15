@@ -23,7 +23,7 @@ class RegisterController extends AbstractController
 
         $form = $this->createFormBuilder($user)
             ->setAction($this->generateUrl('register-success'))
-                ->add('name', TextType::class, ['label' => 'Nom'])
+            ->add('name', TextType::class, ['label' => 'Nom'])
             ->add('email', TextType::class, ['label' => 'Mail'])
             ->add('save', SubmitType::class, ['label' => 'Creer mon compte'])
             ->getForm();
